@@ -8,6 +8,7 @@
 #include <stdx/types.hh>
 
 #include "app/backend_bridge.hpp"
+#include "app/theme_bridge.hpp"
 #include "core/log.hpp"
 #include "esp32/backend.hpp"
 
@@ -42,6 +43,7 @@ struct app_context {
 
     std::unique_ptr<telemetry_backend>          backend;
     std::unique_ptr<ui::bridge::backend_bridge> bridge;
+    std::unique_ptr<ui::bridge::theme_bridge>   theme;
     std::string                                 username;
     std::string                                 password;
     log_fn_t                                    log;

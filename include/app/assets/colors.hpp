@@ -9,18 +9,24 @@ namespace color {
 inline constexpr QColor bg_d(0x1e, 0x1e, 0x1e);
 inline constexpr QColor bg_hover_d(0x2a, 0x2a, 0x2a);
 inline constexpr QColor border_d(0x2d, 0x2d, 0x2d);
+inline constexpr QColor border_focus_d(0x00, 0xad, 0xb5);
 inline constexpr QColor text_main_d(0xd4, 0xd4, 0xd4);
 inline constexpr QColor text_muted_d(0xa0, 0xa0, 0xa0);
+inline constexpr QColor text_disabled_d(0x6a, 0x6a, 0x6a);
 inline constexpr QColor accent_d(0x00, 0xad, 0xb5);
+inline constexpr QColor text_on_accent_d(0x00, 0x1a, 0x1c);
 
 
 // Light Mode Theme Standards
 inline constexpr QColor bg_l(0xf5, 0xf5, 0xf5);
 inline constexpr QColor bg_hover_l(0xe8, 0xe8, 0xe8);
 inline constexpr QColor border_l(0xd0, 0xd0, 0xd0);
+inline constexpr QColor border_focus_l(0x00, 0x8a, 0x91);
 inline constexpr QColor text_main_l(0x1e, 0x1e, 0x1e);
 inline constexpr QColor text_muted_l(0x60, 0x60, 0x60);
+inline constexpr QColor text_disabled_l(0xa8, 0xa8, 0xa8);
 inline constexpr QColor accent_l(0x00, 0x8a, 0x91);
+inline constexpr QColor text_on_accent_l(0xf5, 0xf5, 0xf5);
 
 // Status Indicator Colors
 inline constexpr QColor status_error(0xf4, 0x43, 0x36);

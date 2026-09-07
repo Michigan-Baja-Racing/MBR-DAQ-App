@@ -1,5 +1,6 @@
 #include <fmt/format.h>
 
+#include <qpalette.h>
 #include <stdx/types.hh>
 #include <stdx/utility.hh>
 
@@ -92,6 +93,58 @@ QString make_menu_style(int font_size_px) {
 QString make_status_dot_style(const QColor& color, int diameter_px) {
     return QString::fromStdString(fmt::format(
         "background-color: {}; border-radius: {}px;", color.name().toStdString(), diameter_px / 2));
+}
+
+void theme_manager::initialize_pallets() {
+
+    //dark mode initialization
+    dark_p.setColor(QPalette::Window, color::bg_d);
+    dark_p.setColor(QPalette::Base, color::bg_d);
+    dark_p.setColor(QPalette::AlternateBase, color::bg_hover_d);
+    dark_p.setColor(QPalette::Button, color::bg_d);
+    dark_p.setColor(QPalette::ToolTipBase, color::bg_d);
+
+    dark_p.setColor(QPalette::WindowText, color::text_main_d);
+    dark_p.setColor(QPalette::Text, color::text_main_d);
+    dark_p.setColor(QPalette::ButtonText, color::text_main_d);
+    dark_p.setColor(QPalette::ToolTipText, color::text_main_d);
+    dark_p.setColor(QPalette::PlaceholderText, color::text_muted_d);
+
+    dark_p.setColor(QPalette::Highlight, color::accent_d);
+    dark_p.setColor(QPalette::HighlightedText, color::text_on_accent_d);
+    dark_p.setColor(QPalette::Link, color::accent_d);
+
+    dark_p.setColor(QPalette::Disabled, QPalette::ButtonText, color::text_disabled_d);
+    dark_p.setColor(QPalette::Disabled, QPalette::Text, color::text_disabled_d);
+    dark_p.setColor(QPalette::Disabled, QPalette::WindowText, color::text_disabled_d);
+
+    //light mode initialization
+    light_p.setColor(QPalette::Window, color::bg_l);
+    light_p.setColor(QPalette::Base, color::bg_l);
+    light_p.setColor(QPalette::AlternateBase, color::bg_hover_l);
+    light_p.setColor(QPalette::Button, color::bg_l);
+    light_p.setColor(QPalette::ToolTipBase, color::bg_l);
+
+    light_p.setColor(QPalette::WindowText, color::text_main_l);
+    light_p.setColor(QPalette::Text, color::text_main_l);
+    light_p.setColor(QPalette::ButtonText, color::text_main_l);
+    light_p.setColor(QPalette::ToolTipText, color::text_main_l);
+    light_p.setColor(QPalette::PlaceholderText, color::text_muted_l);
+
+    light_p.setColor(QPalette::Highlight, color::accent_l);
+    light_p.setColor(QPalette::HighlightedText, color::text_on_accent_l);
+    light_p.setColor(QPalette::Link, color::accent_l);
+
+    light_p.setColor(QPalette::Disabled, QPalette::ButtonText, color::text_disabled_l);
+    light_p.setColor(QPalette::Disabled, QPalette::Text, color::text_disabled_l);
+    light_p.setColor(QPalette::Disabled, QPalette::WindowText, color::text_disabled_l);
+}
+
+QPalette theme_manager::get_theme(bool light) {
+    if (light) {
+        return light_p;
+    }
+    return dark_p;
 }
 
 } // namespace mbr::ui::style

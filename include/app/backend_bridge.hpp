@@ -4,6 +4,8 @@
 #include <esp32/data.hpp>
 #include <qtmetamacros.h>
 
+#include <vector>
+
 namespace mbr::ui::bridge {
 
 class backend_bridge : public QObject {

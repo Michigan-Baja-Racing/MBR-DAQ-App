@@ -17,6 +17,7 @@ class app_t {
     ~app_t();
     MAKE_PINNED(app_t);
 
+    void set_theme();
     void run();
 
   private:
